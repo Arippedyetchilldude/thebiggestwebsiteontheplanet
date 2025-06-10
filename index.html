@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Growing Word</title>
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #0000ff;
+            overflow: hidden;
+            position: relative;
+        }
+        #growing-word {
+            font-size: 24px;
+            font-family: Arial, sans-serif;
+            color: #00FF00;
+            transition: font-size 1s linear;
+            white-space: nowrap;
+            position: fixed;
+            transform-origin: center;
+        }
+        #credit {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: #FFFF00;
+            font-family: Arial, sans-serif;
+            font-size: 16px;
+            text-align: center;
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+    <div id="growing-word">BIG</div>
+    <div id="credit">"To my dear Amelia"</div>
+
+    <script>
+        const word = document.getElementById('growing-word');
+        let currentSize = 24;
+
+        function growWord() {
+            currentSize += 5;
+            word.style.fontSize = currentSize + 'px';
+        }
+
+        setInterval(growWord, 1000);
+    </script>
+</body>
+</html>
